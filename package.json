@@ -42,7 +42,8 @@
     "static-eval": "^2.0.3",
     "ts-key-enum": "^2.0.2",
     "typescript": "^3.7.5",
-    "uuid": "^3.3.3"
+    "uuid": "^3.3.3",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@sindresorhus/slugify": "^0.3.0",
@@ -84,7 +85,9 @@
     "lintts:fix": "eslint -c lint_typescript.json --fix ./src/**/*.tsx --no-ignore",
     "pretest": "npm run lint",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "browserslist": {
     "production": [
@@ -95,5 +98,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "snyk": true
 }
